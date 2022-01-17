@@ -3,27 +3,28 @@ import {
   Header,
   Home,
   Footer,
-  Movies,
   MoviesDetail,
   NoFoundPage,
 } from "components/export";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+/* function */
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route index element={<Home />} />
-          <Route path="movies" element={<Movies />}>
-            <Route path=":detail" element={<MoviesDetail />} />
-            <Route index element={<Movies />} />
-          </Route>
-          <Route path="*" element={<NoFoundPage />} />
-        </Routes>
+        <Header />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
+            <Route path="details">
+              <Route path=":id" element={<MoviesDetail />} />
+            </Route>
+            <Route path="*" element={<NoFoundPage />} />
+          </Routes>
+        </div>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }
