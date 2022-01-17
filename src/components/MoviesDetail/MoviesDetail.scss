@@ -1,0 +1,115 @@
+.movies-detail {
+  width: 100%;
+  height: 100%;
+  min-height: 83.3vh;
+  display: flex;
+  flex: 1;
+  padding: 20px 0;
+  overflow: hidden;
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 0 20px;
+    flex: 1;
+    &-content {
+      flex: 1;
+      &-title {
+        font-size: 44px;
+      }
+      &-info {
+        display: flex;
+        align-items: center;
+        gap: 0 20px;
+        font-size: 24px;
+        .star {
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          color: var(--color-star);
+          gap: 0 5px;
+          .icon {
+            font-size: 16px;
+            margin-top: -3px;
+          }
+        }
+        .date {
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          color: var(--color-white);
+          gap: 0 5px;
+          .icon {
+            font-size: 16px;
+            margin-top: -3px;
+          }
+        }
+        .status {
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          color: var(--color-green);
+          gap: 0 5px;
+          .icon {
+            font-size: 16px;
+            margin-top: -3px;
+          }
+        }
+        .genres {
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          color: var(--color-orangered);
+          gap: 0 5px;
+          .icon {
+            font-size: 16px;
+            margin-top: -3px;
+          }
+        }
+      }
+      &-description {
+        p {
+          width: 100%;
+          font-size: 20px;
+          color: var(--color-white);
+          line-height: 18px;
+        }
+        a {
+          display: inline-block;
+          text-align: right;
+          color: var(--color-orange);
+          font-size: 18px;
+        }
+      }
+      &-image-gallery {
+        width: 100%;
+        height: 300px;
+        div {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &-image {
+      height: 550px;
+      order: -1;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.image-gallery-thumbnail-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.image-gallery-svg {
+  width: 55px !important;
+  height: 55px !important;
+}
