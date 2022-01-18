@@ -1,6 +1,5 @@
 import React from "react";
 import "./Header.scss";
-import UserImage from "images/user.png";
 import { Link } from "react-router-dom";
 import { SearchBox } from "components/export";
 /* function */
@@ -11,9 +10,17 @@ const Header = () => {
         <h1>MoviesApp</h1>
       </Link>
       <SearchBox />
-      <div className="header-image">
-        <img src={UserImage} alt="userImage" />
-      </div>
+      <a
+        href="https://github.com/harundogdu"
+        className="header-image"
+        target={"_blank"}
+        rel="noreferrer"
+      >
+        <img
+          src="https://avatars.githubusercontent.com/u/43449361?v=4"
+          alt="userImage"
+        />
+      </a>
     </div>
   );
 };
