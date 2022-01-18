@@ -7,6 +7,7 @@ import {
   NoFoundPage,
 } from "components/export";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SearchDetail from "components/SearchList/SearchDetail";
 /* function */
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="details">
               <Route path=":id" element={<MoviesDetail />} />
             </Route>
+            <Route path="search/:searchText" element={<SearchDetail />} />
             <Route path="*" element={<NoFoundPage />} />
           </Routes>
         </div>

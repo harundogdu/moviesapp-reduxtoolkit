@@ -28,6 +28,16 @@ export const fetchPersons = createAsyncThunk(
   }
 );
 
+export const fetchSearch = createAsyncThunk(
+  "movies/fetchSearch",
+  async (query) => {
+    const response = await MoviesService.get(
+      `search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}&page=1`
+    );
+    return response.data.results;
+  }
+);
+
 const initialState = {
   movies: [],
   moviesLoading: false,
@@ -35,12 +45,19 @@ const initialState = {
   tvShowsLoading: false,
   persons: [],
   personsLoading: false,
+  searchList: [],
+  searchText: "",
+  searchLoading: false,
 };
 
 const moviesSlice = createSlice({
   name: "movies",
   initialState,
-  reducers: {},
+  reducers: {
+    setSearchText: (state, action) => {
+      state.searchText = action.payload;
+    },
+  },
   extraReducers: {
     [fetchMovies.pending]: (state, action) => {
       state.moviesLoading = true;
@@ -74,7 +91,20 @@ const moviesSlice = createSlice({
     [fetchPersons.rejected]: (state, action) => {
       state.personsLoading = false;
     },
+
+    [fetchSearch.pending]: (state, action) => {
+      state.searchLoading = true;
+    },
+    [fetchSearch.fulfilled]: (state, action) => {
+      state.searchList = action.payload;
+      state.searchLoading = false;
+    },
+    [fetchSearch.rejected]: (state, action) => {
+      state.searchLoading = false;
+    },
   },
 });
+
+export const { setSearchText } = moviesSlice.actions;
 
 export default moviesSlice.reducer;
