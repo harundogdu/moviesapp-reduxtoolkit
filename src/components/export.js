@@ -7,3 +7,4 @@ export { default as MoviesDetail } from "./MoviesDetail/MoviesDetail";
 export { default as SliderArea } from "./SliderArea/SliderArea";
 export { default as Loading } from "./Loading/Loading";
 export { default as SearchBox } from "./SearchBox/SearchBox";
+export { default as SearchList } from "./SearchList/SearchList";

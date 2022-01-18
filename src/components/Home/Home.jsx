@@ -32,19 +32,16 @@ const Home = () => {
           title="Trending movies this week"
           data={movies}
           loading={moviesLoading}
-          type="movie"
         />
         <SliderArea
           title="Trending tv shows this week"
           data={tvShows}
           loading={tvShowsLoading}
-          type="tv"
         />
         <SliderArea
           title="Trending persons this week"
           data={persons}
           loading={personsLoading}
-          type="person"
         />
       </div>
       {moviesLoading && tvShowsLoading && personsLoading && <Loading />}
