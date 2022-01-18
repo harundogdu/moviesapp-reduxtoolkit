@@ -32,7 +32,7 @@ export const fetchSearch = createAsyncThunk(
   "movies/fetchSearch",
   async (query) => {
     const response = await MoviesService.get(
-      `search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}&page=1`
+      `search/multi?api_key=${process.env.REACT_APP_API_KEY}&query=${query}&page=1`
     );
     return response.data.results;
   }

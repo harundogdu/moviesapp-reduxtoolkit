@@ -1,17 +1,22 @@
 import React from "react";
-import "./SearchDetail.scss";
+import "./SearchList.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch } from "features/movies/moviesSlice";
-import { Loading } from "components/export";
+import { Loading, SliderArea } from "components/export";
 import { AiOutlineLeft } from "react-icons/ai";
-const SearchDetail = () => {
+/* funtion */
+const SearchList = () => {
   const dispatch = useDispatch();
   let { searchText } = useParams();
   const { searchList, searchLoading } = useSelector((state) => state.movies);
+  console.log();
   React.useEffect(() => {
     dispatch(fetchSearch(searchText));
   }, [dispatch, searchText]);
+
   return (
     <div className="search-detail">
       {searchLoading && <Loading />}
@@ -25,18 +30,21 @@ const SearchDetail = () => {
         </div>
       )}
       {searchList.length > 0 && (
-        <div className="show-results">Showing results for your search...</div>
-      )}
-      {searchList.length > 0 &&
-        searchList.map((item) => {
-          return (
-            <div key={item.id}>
-              <h2>{item.title}</h2>
+        <>
+          <div className="show-results">Showing results for your search...</div>
+          <div className="home">
+            <div className="home-container">
+              <SliderArea
+                title=""
+                data={searchList}
+                loading={searchLoading}
+              />
             </div>
-          );
-        })}
+          </div>
+        </>
+      )}
     </div>
   );
 };
 
-export default SearchDetail;
+export default SearchList;
