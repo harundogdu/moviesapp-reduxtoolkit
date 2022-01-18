@@ -1,0 +1,30 @@
+.searchbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 40px;
+  width: 100%;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  :focus-within {
+    width: 50%;
+  }
+  input {
+    width: 25%;
+    padding: 8px 10px 8px 30px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    transition: all 0.1s ease-in-out;
+    color: var(--color-primary);
+    ::placeholder {
+      color: rgb(109, 106, 106);
+    }
+  }
+  svg {
+    position: absolute;
+    top: 6px;
+    left: 46px;
+    color: rgb(109, 106, 106);
+  }
+}

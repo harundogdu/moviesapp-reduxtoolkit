@@ -20,6 +20,6 @@ function SamplePrevArrow(props) {
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <di style={style} className={"icon " + className} onClick={onClick} />
+    <div style={style} className={"icon " + className} onClick={onClick} />
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.scss";
 import UserImage from "images/user.png";
 import { Link } from "react-router-dom";
+import { SearchBox } from "components/export";
 /* function */
 const Header = () => {
   return (
@@ -9,6 +10,7 @@ const Header = () => {
       <Link to={"/"} className="header-title">
         <h1>MoviesApp</h1>
       </Link>
+      <SearchBox />
       <div className="header-image">
         <img src={UserImage} alt="userImage" />
       </div>
